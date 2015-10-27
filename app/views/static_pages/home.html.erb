@@ -1,3 +1,15 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="entry_form">
+        <%= render 'shared/entry_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
 <div class="center jumbotron">
   <h1>Welcome to Utsob Blog</h1>
 
@@ -10,3 +22,5 @@
 
 <%= link_to image_tag("asdf.png", alt: "blog logo"),
             'http://rubyonrails.org/' %>
+
+<% end %>
