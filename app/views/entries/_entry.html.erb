@@ -1,6 +1,6 @@
 <li id="entry-<%= entry.id %>">
   <span class="user"><%= link_to entry.user.name, entry.user %></span><br>
-  <span class="title"><%= entry.title %></span><br>
+  <span class="title"><%= link_to entry.title, entry %></span><br>
   <span class="content"><%= entry.content %></span><br>
   <span class="timestamp">
     Posted <%= time_ago_in_words(entry.created_at) %> ago.

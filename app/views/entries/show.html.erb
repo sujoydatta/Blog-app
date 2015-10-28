@@ -1,0 +1,30 @@
+<% provide(:title, "comments") %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @entries.title %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @entries.comments.any? %>
+      <h3>Comments (<%= @entries.comments.count %>)</h3>
+      <ol class="microposts">
+        <%= render @comment %>
+      </ol>
+      <%= will_paginate @comment %>
+    <% end %>
+    <% if logged_in? %>
+    <%= form_for(@comments) do |f| %>
+
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+     <input type="hidden" name="entry_id" value="<%= @entries.id %>" />
+    <%= f.text_field :body, placeholder: "post a comment.." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
+<% end %>
+  </div>
+</div>
