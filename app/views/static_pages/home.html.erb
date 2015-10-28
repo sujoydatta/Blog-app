@@ -8,6 +8,10 @@
         <%= render 'shared/entry_form' %>
       </section>
     </aside>
+    <div class="col-md-8">
+      <h3>Entry Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
   </div>
 <% else %>
 <div class="center jumbotron">
@@ -20,7 +24,9 @@
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary"%>
 </div>
 
-<%= link_to image_tag("asdf.png", alt: "blog logo"),
-            'http://rubyonrails.org/' %>
+<div class="col-md-8">
+      <h3>Entry Feed</h3>
+      <%= render 'shared/feed' %>
+</div>
 
 <% end %>
